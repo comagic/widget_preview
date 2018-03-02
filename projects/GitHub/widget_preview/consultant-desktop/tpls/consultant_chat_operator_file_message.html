@@ -1,0 +1,30 @@
+<div class='comagic-c-messages-log__message-box comagic-c-messages-log__message-box--<%=sender%> comagic-js-last-message'>
+    <a class='comagic-c-messages-log__message-box-row comagic-h-consultant-fix-link' href='<%=fx_link%>' target="_blank">
+        <div class='comagic-c-messages-log__message-box-item'>
+            <img class='comagic-c-messages-log__avatar' src='<%=operator_info.avatar || Comagic.UI.C.IMAGES.OPERATOR%>'/>
+        </div>
+        <div class='comagic-c-messages-log__message-box-item comagic-c-messages-log__message-box-item--<%=sender%>'>
+            <div class='comagic-c-messages-log__message-bubble comagic-c-messages-log__message-bubble--file-operator'>
+                <div class='comagic-c-messages-log__file-message-inner-area'>
+                    <div class='comagic-c-messages-log__file-message-inner-area-item'>
+                        <i class='comagic-c-messages-log__file-message-inner-area-item comagic-c-messages-log__file-icon'></i>
+                    </div>
+                    <div class='comagic-c-messages-log__file-message-inner-area-item'>
+                        <div class='comagic-c-messages-log__file-text'>
+                            <%=fx_name%>
+                        </div>
+                        <div class='comagic-c-messages-log__file-text comagic-c-messages-log__file-text--size'>
+                            <%=fx_size_info%>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class='comagic-c-messages-log__message-info comagic-h-consultant-space-between'>
+                    <div class='comagic-c-messages-log__message-info-item comagic-c-messages-log__message-info-item--name'><%=operator_info.name%></div>
+                <div class='comagic-c-messages-log__message-info-item comagic-c-messages-log__message-info-item--time'>
+                    <%=Comagic.UI.toTimeString(new Date(date * 1000))%>
+                </div>
+            </div>
+        </div>
+    </a>
+</div>

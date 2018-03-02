@@ -1,0 +1,629 @@
+@charset "UTF-8";
+@keyframes popup-right-life {
+    0% {
+        left: 100%;
+    }
+    9.09091% {
+        left: 0%;
+    }
+    90.90909% {
+        left: 0%;
+    }
+    100% {
+        left: 100%;
+    }
+}
+
+@keyframes popup-left-life {
+    0% {
+        left: -100%;
+    }
+    9.09091% {
+        left: 0%;
+    }
+    90.90909% {
+        left: 0%;
+    }
+    100% {
+        left: -100%;
+    }
+}
+
+.comagic-widget--hidden {
+    visibility: hidden;
+}
+
+.comagic-unselectable {
+    -moz-user-select: -moz-none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+[c-draggable="x"] [c-dragger] {
+    cursor: ew-resize;
+}
+
+[c-draggable="x"] [c-dragger] *:not([c-nodragger]) {
+    cursor: ew-resize;
+    pointer-events: none;
+}
+
+[c-draggable="y"] [c-dragger] {
+    cursor: ns-resize;
+}
+
+[c-draggable="y"] [c-dragger] *:not([c-nodragger]) {
+    cursor: ns-resize;
+    pointer-events: none;
+}
+
+[c-draggable="xy"] [c-dragger] {
+    cursor: move;
+}
+
+[c-draggable="xy"] [c-dragger] *:not([c-nodragger]) {
+    cursor: move;
+    pointer-events: none;
+}
+
+.comagic-call-generator__field {
+    margin: 0 0 5px 0;
+    position: relative;
+}
+
+.comagic-call-generator__field.comagic-call-generator__field--error::after, .comagic-call-generator__field.comagic-call-generator__field--error::before {
+    position: absolute;
+    pointer-events: none;
+    font-family: Arial, Helvetica, Trebuchet, sans;
+    font-size: 12px;
+    line-height: 12px;
+}
+
+.comagic-call-generator__field.comagic-call-generator__field--error::before {
+    content: ' ';
+    width: 17px;
+    height: 17px;
+    right: 6px;
+    top: 6px;
+    background-image: url(//app.comagic.ru/widget/images/common/desktop/error.png);
+    z-index: 1;
+}
+
+.comagic-call-generator__field.comagic-call-generator__field--error::after {
+    position: absolute;
+    color: red;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    right: 0;
+    line-height: 30px;
+    text-align: right;
+    padding-right: 31px;
+    box-sizing: border-box;
+}
+
+.comagic-call-generator__field.comagic-call-generator__field--error--required::after {
+    content: 'Необходимо заполнить';
+}
+
+.comagic-call-generator__field.comagic-call-generator__field--error--required.comagic-call-generator__field-name::after {
+    content: 'Укажите имя';
+}
+
+.comagic-call-generator__field.comagic-call-generator__field--error--required.comagic-call-generator__field-phone::after {
+    content: 'Укажите телефон';
+}
+
+.comagic-call-generator__field.comagic-call-generator__field--error--required.comagic-call-generator__field-email::after {
+    content: 'Укажите ваш email';
+}
+
+.comagic-call-generator__field__input {
+    text-indent: 1px;
+    box-sizing: border-box;
+    border-radius: 4px;
+    background-color: white;
+    color: #000;
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    box-shadow: inset 0 2px 1px 0 rgba(212, 212, 212, 0.39);
+    width: 100%;
+    line-height: 12px;
+    font-family: Arial, Helvetica, Trebuchet, sans;
+    font-size: 12px;
+    height: 30px;
+    padding: 6px;
+}
+
+.comagic-call-generator__field__input::-webkit-input-placeholder {
+    font-style: italic;
+    font-size: 12px;
+    padding-bottom: 5px;
+    color: #757575;
+    opacity: 1;
+}
+
+.comagic-call-generator__field__input:-moz-placeholder {
+    font-style: italic;
+    font-size: 12px;
+    padding-bottom: 5px;
+    color: #757575;
+    opacity: 1;
+}
+
+.comagic-call-generator__field__input::-moz-placeholder {
+    font-style: italic;
+    font-size: 12px;
+    padding-bottom: 5px;
+    color: #757575;
+    opacity: 1;
+}
+
+.comagic-call-generator__field__input:-ms-input-placeholder {
+    font-style: italic;
+    font-size: 12px;
+    padding-bottom: 5px;
+    color: #757575;
+    opacity: 1;
+}
+
+.comagic-call-generator__field__input:focus {
+    outline: none;
+}
+
+.comagic-call-generator__field__input:focus::-webkit-input-placeholder {
+    color: transparent;
+}
+
+.comagic-call-generator__field__input:focus:-moz-placeholder {
+    color: transparent;
+}
+
+.comagic-call-generator__field__input:focus::-moz-placeholder {
+    color: transparent;
+}
+
+.comagic-call-generator__field__input:focus:-ms-input-placeholder {
+    color: transparent;
+}
+
+.comagic-call-generator__field__input::-ms-clear {
+    display: none;
+}
+
+.comagic-call-generator__field__input.comagic-call-generator__field--error__input {
+    color: red;
+}
+
+.comagic-call-generator__field__input.comagic-call-generator__field--error__input::-webkit-input-placeholder {
+    color: transparent;
+}
+
+.comagic-call-generator__field__input.comagic-call-generator__field--error__input:-moz-placeholder {
+    color: transparent;
+}
+
+.comagic-call-generator__field__input.comagic-call-generator__field--error__input::-moz-placeholder {
+    color: transparent;
+}
+
+.comagic-call-generator__field__input.comagic-call-generator__field--error__input:-ms-input-placeholder {
+    color: transparent;
+}
+
+.comagic-call-generator__field-textarea {
+    height: 87px;
+}
+
+.comagic-call-generator__field-textarea__input {
+    resize: none;
+    height: 87px;
+    text-transform: none;
+    margin: 0;
+    cursor: text;
+    overflow: hidden;
+    text-align: left;
+}
+
+.comagic-call-generator__field-textarea__input:empty:before {
+    color: #757575;
+    font-style: italic;
+    font-size: 12px;
+    content: attr(placeholder);
+    display: inline;
+}
+
+.comagic-call-generator__field-textarea__input:empty:focus:before {
+    content: "";
+}
+
+.comagic-call-generator__field-textarea__input.comagic-call-generator__field--error__input:empty:before {
+    color: transparent;
+}
+
+.comagic-call-generator__field-group__input, .comagic-call-generator__field-combobox__input {
+    width: 100%;
+    background: url(//app.comagic.ru/widget/images/common/desktop/trigger-combobox.png) no-repeat;
+    background-position: right 12px center;
+    background-color: #fff;
+}
+
+.comagic-call-generator__field-group__select, .comagic-call-generator__field-combobox__select {
+    line-height: 32px;
+    border: 1px solid darkgrey;
+    font-family: "Open Sans CoMagic", sans-serif;
+    font-weight: 600;
+    font-size: 12px;
+    color: #000;
+    box-shadow: none;
+    border-radius: 4px;
+    height: 30px;
+    padding: 0 8px;
+    background-color: white;
+    box-sizing: border-box;
+    width: 100%;
+    opacity: 0;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+}
+
+.comagic-call-generator__field-group__select::-webkit-input-placeholder, .comagic-call-generator__field-combobox__select::-webkit-input-placeholder {
+    font-size: 12px;
+    font-weight: normal;
+    font-style: italic;
+}
+
+.comagic-call-generator__field-group__select:-moz-placeholder, .comagic-call-generator__field-combobox__select:-moz-placeholder {
+    font-size: 12px;
+    font-weight: normal;
+    font-style: italic;
+}
+
+.comagic-call-generator__field-group__select::-moz-placeholder, .comagic-call-generator__field-combobox__select::-moz-placeholder {
+    font-size: 12px;
+    font-weight: normal;
+    font-style: italic;
+}
+
+.comagic-call-generator__field-group__select:-ms-input-placeholder, .comagic-call-generator__field-combobox__select:-ms-input-placeholder {
+    font-size: 12px;
+    font-weight: normal;
+    font-style: italic;
+}
+
+.comagic-call-generator-hidden {
+    display: none;
+}
+
+.comagic-call-generator-background {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font: inherit;
+    font-size: 100%;
+    font-family: Arial, Helvetica, sans-serif;
+    vertical-align: baseline;
+    text-align: left;
+    box-sizing: content-box;
+    -moz-box-sizing: content-box;
+    -ms-box-sizing: content-box;
+    -webkit-box-sizing: content-box;
+    background-image: none;
+    height: auto;
+    position: static;
+    opacity: .99;
+    float: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 100005;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    zoom: 1;
+    background-color: rgba(0, 0, 0, 0.3);
+}
+
+.comagic-call-generator {
+    position: relative;
+    box-sizing: border-box;
+    background-size: contain;
+    background: #F8F8F8;
+    padding: 38px 25px 38px 50px;
+    border: none;
+    border-radius: 8px;
+    width: 700px;
+    min-width: 700px;
+    min-height: 340px;
+    max-height: 350px;
+    box-shadow: 0 3px 30px 0 rgba(0, 0, 0, 0.5);
+    margin-bottom: 4%;
+}
+
+.comagic-call-generator--with-group {
+    min-height: 423px;
+    max-height: 423px;
+}
+
+.comagic-call-generator__close-btn {
+    font: 12px Arial, Helvetica, Trebuchet, sans;
+    height: 26px;
+    width: 26px;
+    color: #868686;
+    opacity: .46;
+    font-size: 32px;
+    line-height: 28px;
+    position: absolute;
+    top: 6px;
+    right: 5px;
+    cursor: pointer;
+}
+
+.comagic-call-generator__image-handset,
+.comagic-call-generator__image-alarm-clock {
+    height: 145px;
+    width: 145px;
+    border: 5px solid #d7dcde;
+    border-radius: 77px;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.comagic-call-generator__image-handset {
+    background-image: url(//app.comagic.ru/widget/images/lead/desktop/retention-handset.png);
+    margin-top: 28px;
+}
+
+.comagic-call-generator__image-alarm-clock {
+    box-sizing: border-box;
+    margin: auto;
+    background-image: url(//app.comagic.ru/widget/images/lead/desktop/retention-alarm-clock.png);
+}
+
+.comagic-call-generator__title {
+    font-family: "Open Sans CoMagic", sans-serif;
+    font-weight: 300;
+    color: #344b53;
+    font-size: 28px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    line-height: 100%;
+    min-height: 60px;
+    max-height: 85px;
+    display: block;
+    vertical-align: middle;
+}
+
+.comagic-call-generator__message {
+    color: #666;
+    font-family: "Open Sans CoMagic", sans-serif;
+    font-weight: 400;
+    font-size: 13px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    min-height: 30px;
+    max-height: 72px;
+    margin: 7px 0 21px;
+    line-height: normal;
+}
+
+.comagic-call-generator__main-btn {
+    max-width: 225px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    vertical-align: bottom;
+    display: inline-block;
+    background-image: linear-gradient(180deg, rgba(255, 255, 255, 0.15) 0, rgba(255, 255, 255, 0) 100%);
+    box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.16), 0 2px 3px rgba(0, 0, 0, 0.3);
+    height: 42px;
+    text-decoration: none;
+    border-radius: 3px;
+    padding: 0 20px;
+    min-width: 0;
+    cursor: pointer;
+    line-height: 16px;
+}
+
+.comagic-call-generator__main-btn:hover {
+    background-image: linear-gradient(180deg, rgba(255, 255, 255, 0.3) 0, rgba(255, 255, 255, 0) 100%);
+}
+
+.comagic-call-generator__main-btn:active {
+    background-image: linear-gradient(360deg, rgba(255, 255, 255, 0.1) 0, rgba(255, 255, 255, 0) 100%);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.25) inset;
+}
+
+.comagic-call-generator__main-btn__inner {
+    text-decoration: none;
+    font-family: Arial;
+    font-weight: bold;
+    font-size: 14px;
+    text-transform: uppercase;
+    line-height: 42px;
+    display: block;
+}
+
+.comagic-call-generator__field {
+    margin-bottom: 20px;
+}
+
+.comagic-call-generator__field.comagic-call-generator__field--error::after {
+    left: 0;
+    line-height: 42px;
+    font-weight: bold;
+}
+
+.comagic-call-generator__field__input {
+    line-height: 32px;
+    font-family: "Open Sans CoMagic", sans-serif;
+    font-weight: 600;
+    font-size: 18px;
+    height: 42px;
+    padding: 0 8px;
+    border: 1px solid darkgrey;
+    box-shadow: none;
+    text-indent: 1px;
+}
+
+.comagic-call-generator__field__input::-webkit-input-placeholder {
+    font-size: 14px;
+    font-weight: normal;
+}
+
+.comagic-call-generator__field__input:-moz-placeholder {
+    font-size: 14px;
+    font-weight: normal;
+}
+
+.comagic-call-generator__field__input::-moz-placeholder {
+    font-size: 14px;
+    font-weight: normal;
+}
+
+.comagic-call-generator__field__input:-ms-input-placeholder {
+    font-size: 14px;
+    font-weight: normal;
+}
+
+.comagic-call-generator__block-delayed-call {
+    display: flex;
+}
+
+.comagic-call-generator__block-delayed-call > div {
+    width: 154px;
+}
+
+.comagic-call-generator__block-delayed-call .comagic-call-generator__field-delayed-call-time {
+    margin-left: 8px;
+}
+
+.comagic-call-generator__block-delayed-call .comagic-call-generator__field-group__select {
+    width: 154px;
+}
+
+.comagic-call-generator__block-delayed-call .comagic-call-generator__field-group.comagic-call-generator__field--error--required::after {
+    content: '';
+    width: 154px;
+}
+
+.comagic-call-generator__field.comagic-call-generator__field--error::before {
+    top: 12px;
+}
+
+.comagic-call-generator__field-phone__input {
+    width: 175px;
+}
+
+.comagic-call-generator__field-phone {
+    margin-bottom: 10px;
+}
+
+.comagic-call-generator__field-phone.comagic-call-generator__field--error::before {
+    left: 152px;
+}
+
+.comagic-call-generator__field-phone.comagic-call-generator__field--error--required::before {
+    left: 152px;
+}
+
+.comagic-call-generator__field-phone.comagic-call-generator__field--error--required::after {
+    width: 175px;
+}
+
+.comagic-call-generator__field-group {
+    width: 317px;
+}
+
+.comagic-call-generator__field-group.comagic-call-generator__field--error--required::after {
+    width: 317px;
+}
+
+.comagic-call-generator__field-group__select {
+    height: 42px;
+    width: 317px;
+    font-size: 14px;
+}
+
+.comagic-call-generator__field-group__option {
+    font-size: 18px;
+}
+
+.comagic-call-generator__body {
+    transition: opacity 0.3s;
+    opacity: 1;
+    position: relative;
+}
+
+.comagic-call-generator__body--transparent {
+    opacity: 0;
+}
+
+.comagic-call-generator__body-reverse {
+    text-align: center;
+}
+
+.comagic-call-generator__body__left-part {
+    width: 180px;
+    float: left;
+}
+
+.comagic-call-generator__body__right-part {
+    margin-left: 180px;
+    padding: 24px 0 0 0;
+}
+
+.comagic-call-generator__body__bottom-part {
+    position: absolute;
+    margin-left: 180px;
+    bottom: -25px;
+}
+
+.comagic-call-generator__body-reverse__title {
+    margin: 12px 0 14px 0;
+    height: 27px;
+}
+
+.comagic-call-generator__bottom-bar {
+    position: absolute;
+    bottom: 14px;
+    left: 230px;
+    right: 20px;
+}
+
+.comagic-call-generator__linkbutton {
+    line-height: 14px;
+    color: #000;
+    opacity: .5;
+    font-size: 12px;
+    text-decoration: underline;
+    font-family: Arial, Helvetica, sans-serif;
+    white-space: nowrap;
+    cursor: pointer;
+}
+
+a.comagic-call-generator__link {
+    line-height: 14px;
+    color: #000;
+    opacity: .5;
+    font-size: 12px;
+    text-decoration: underline;
+    font-family: Arial, Helvetica, sans-serif;
+    white-space: nowrap;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+}
+
+a.comagic-call-generator__personal {
+    left: 0;
+}
+
+a.comagic-call-generator__branding {
+    left: auto;
+    right: 0;
+}

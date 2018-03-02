@@ -1,0 +1,109 @@
+<div class="comagic-widget comagic-lead comagic-lead-offline-message-generator">
+    <div class="comagic-lead__mask"></div>
+    <div class="comagic-lead__content <% if (banner_color_mobile === '232323') { %> comagic-lead__dark <% } else { %> comagic-lead__light <% } %>">
+        <div class="comagic-lead__work-area">
+            <div>
+                <div class="comagic-lead__info-area">
+                    <div>
+                        <% if (is_image) { %>
+                            <div class="comagic-lead__image">
+                                <img src='<%- image_url %>'>
+                            </div>
+                        <% } %>
+                        <div class="comagic-lead__title" style="color: #<%- button_color_mobile %>">
+                            <%- heading_mobile %>
+                        </div>
+                        <div class="comagic-lead__message">
+                            <%- message %>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="comagic-lead__fields-wrapper comagic-lead__invite-step">
+
+                <% fields.forEach(function(field) {
+                if (field.name === 'name') { %>
+                <div class="comagic-lead__field-container">
+                    <div class="comagic-lead__field-wrapper comagic-name-field comagic-error--hidden">
+                        <div class="comagic-lead__error-icon"></div>
+                        <input class="comagic-lead__field__input" c-name="name" c-type="field"
+                               c-validator="<%= field['is_required'] ? 'required' : '' %>"
+                               placeholder="<%= field['title'] %><%= field['is_required'] ? '*' : '' %>">
+                        <div class="comagic-lead__error-tooltip">Необходимо заполнить</div>
+                    </div>
+                </div>
+                <%}
+                if (field.name === 'phone') { %>
+                <div class="comagic-lead__field-container">
+                    <div class="comagic-lead__field-wrapper comagic-phone-field comagic-error--hidden">
+                        <div class="comagic-lead__error-icon"></div>
+                        <input class="comagic-lead__field__input" type="tel" c-mask="+7 (___) ___-__-__" c-name="phone"
+                               c-type="numberfield"
+                               c-validator="phone <%= field['is_required'] ? 'required' : '' %>"
+                               placeholder="<%= field['title'] %><%= field['is_required'] ? '*' : '' %>">
+                        <div class="comagic-lead__error-tooltip">Необходимо заполнить</div>
+                    </div>
+                </div>
+                <%}
+                if (field.name === 'email') {%>
+                <div class="comagic-lead__field-container">
+                    <div class="comagic-lead__field-wrapper comagic-email-field comagic-error--hidden">
+                        <div class="comagic-lead__error-icon"></div>
+                        <input class="comagic-lead__field__input" type="email" c-name="email" c-type="field"
+                               c-validator="email <%= field['is_required'] ? 'required' : '' %>"
+                               placeholder="<%= field['title'] %><%= field['is_required'] ? '*' : '' %>">
+                        <div class="comagic-lead__error-tooltip">Необходимо заполнить</div>
+                    </div>
+                </div>
+                <%}
+                if (field.name === 'message') {%>
+                <div class="comagic-lead__field-container">
+                    <div class="comagic-lead__field-wrapper comagic-lead-message-field comagic-error--hidden">
+                        <div class="comagic-lead__error-icon"></div>
+                        <textarea class="comagic-lead__field__textarea" c-name="message" c-type="field"
+                                  c-validator="<%= field['is_required'] ? 'required' : '' %>"
+                                  placeholder="<%= field['title'] %><%= field['is_required'] ? '*' : '' %>"></textarea>
+                        <div class="comagic-lead__error-tooltip">Необходимо заполнить</div>
+                    </div>
+                </div>
+                <%}
+                if (field.name === 'custom') {%>
+                <div class="comagic-lead__field-container">
+                    <div class="comagic-lead__field-wrapper comagic-custom-field comagic-error--hidden">
+                        <div class="comagic-lead__error-icon"></div>
+                        <input class="comagic-lead__field__input" c-name="custom" c-type="field"
+                               c-validator="<%= field['is_required'] ? 'required' : '' %>"
+                               placeholder="<%= field['title'] %><%= field['is_required'] ? '*' : '' %>">
+                        <div class="comagic-lead__error-tooltip">Необходимо заполнить</div>
+                    </div>
+                </div>
+                <%}
+                })%>
+
+                <% if (is_groups_enabled) { %>
+                    <div class="comagic-lead__field-container">
+                        <div class="comagic-lead__field-wrapper comagic-combobox-field comagic-error--hidden">
+                            <div class="comagic-lead__error-icon"></div>
+                            <input tabindex="-1" unselectable="on" class="comagic-lead__field__input comagic-lead__field__input--select" c-name="group_id" c-type="field" c-validator="required" readonly="readonly" placeholder="<%- group_title %>*">
+                            <select tabindex="-1" unselectable="on" class="comagic-lead__field__select">
+                                <% allowed_groups.forEach(function(group) { %><option value="<%- group.id %>"><%- group.name %></option><% }); %>
+                            </select>
+                            <div class="comagic-lead__error-tooltip">Необходимо заполнить</div>
+                        </div>
+                    </div>
+                <% } %>
+            </div>
+        </div>
+        <div <% if (widget_link_text) { %> class="comagic-lead__footer-area"" <% } %>>
+            <% if (widget_link_text) { %>
+                <a href="<%- widget_link_url %>" target="_blank" class="comagic-lead__link"><%- widget_link_text %></a>
+            <% } %>
+        </div>
+        <div class="comagic-lead__button-area">
+            <a tabindex="0" class="comagic-lead__main-button" style="background-color: #<%- button_color_mobile %>">
+                <span>Оставить заявку</span>
+            </a>
+        </div>
+        <div class="comagic-lead__button-close"></div>
+    </div>
+</div>

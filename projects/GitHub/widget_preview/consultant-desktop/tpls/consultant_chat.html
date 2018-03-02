@@ -1,0 +1,71 @@
+<div class='comagic-widget comagic-c-consultant-container comagic-c-consultant-container--<%=chat.h_position%> comagic-c-consultant-container--<%=chat.v_position%> comagic-js-consultant-chat--hidden'>
+    <div class='comagic-c-consultant-container__content comagic-h-consultant-tools-owner comagic-device-<%=Comagic.getDeviceType()%>'>
+        <div class='comagic-c-tools comagic-c-consultant-tools comagic-c-consultant-tools--anchor-left' c-ref='closeBtn'>
+            <i class='comagic-c-consultant-tools__btn comagic-c-consultant-tools__btn--close'></i>
+        </div>
+        <div class='comagic-c-consultant-tools comagic-c-consultant-tools--anchor-center comagic-c-consultant-tools--any-btns'>
+            <i class='comagic-c-consultant-tools__btn comagic-c-consultant-tools__btn--sound
+           <%=(Comagic.storage.getItem("_cmg_sound_disabled") && "comagic-js-sound-btn-off") %>'
+               c-ref='soundBtn'></i>
+            <i class='comagic-c-consultant-tools__btn comagic-c-consultant-tools__btn--print' c-ref='printBtn'></i>
+            <i class='comagic-c-consultant-tools__btn comagic-c-consultant-tools__btn--email' c-ref='emailBtn'></i>
+            <% if (chat.is_consultant_operator_rating) { %>
+                <i class='comagic-c-consultant-tools__btn comagic-c-consultant-tools__btn--rating comagic-js-btn-hidden' c-ref='ratingBtn'></i>
+            <% } %>
+        </div>
+        <div class='comagic-c-chat'>
+            <div class='comagic-c-consultant-container__header'>
+                <div class='comagic-c-chat__header-icon'></div>
+                <div class='comagic-c-consultant-container__header-title' c-ref='headerTitle'><%=chat.title%></div>
+            </div>
+            <div class='comagic-c-chat__body' c-ref='body'>
+                <div class='comagic-c-chat__form comagic-c-chat__form--optional' c-ref='groupSelector'></div>
+                <div class='comagic-c-chat__form comagic-c-chat__form--main'>
+                    <div class='comagic-c-chat__form-item comagic-c-chat__form-item--top'></div>
+                    <div class='comagic-c-messages-log comagic-c-chat__form-item comagic-c-chat__form-item--middle'>
+                        <div class='comagic-c-messages-log__boxes-wrapper comagic-o-styled-scroll' c-ref='log'>
+                        </div>
+                    </div>
+                    <div class='comagic-c-chat__form-item comagic-c-chat__form-item--bottom'>
+                        <div class='comagic-c-messages-log__typing-indicator' c-ref='typingIndicator'>
+                            <div class='comagic-c-messages-log__typing-indicator-item comagic-c-messages-log__typing-indicator-item--text'>
+                                <%=Comagic.UI.C.OPERATOR_TYPING_TEXT%>
+                            </div>
+                            <div class='comagic-c-messages-log__typing-indicator-item comagic-c-messages-log__typing-indicator-item--point'></div>
+                            <div class='comagic-c-messages-log__typing-indicator-item comagic-c-messages-log__typing-indicator-item--point'></div>
+                            <div class='comagic-c-messages-log__typing-indicator-item comagic-c-messages-log__typing-indicator-item--point'></div>
+                        </div>
+                        <% if (chat.banner_branding_text) { %>
+                            <div class='comagic-c-consultant-container__banner-branding comagic-c-consultant-container__banner-branding--chat'>
+                                <a href='<%= chat.banner_branding_url %>' target='_blank' class='comagic-c-consultant-container__banner-branding-text'>
+                                    <%= chat.banner_branding_text %></a>
+                            </div>
+                        <% } %>
+                        <div class='comagic-c-messages-editor' c-ref='messageEditor'>
+                            <div class='comagic-c-messages-editor__creator-wrapper'>
+                                <div contenteditable='true' class='comagic-c-messages-editor__creator -metrika-nokeys comagic-o-styled-scroll'
+                                     placeholder='<%=Comagic.UI.C.EDITOR_FIELD_TEXT%>' c-ref='messageCreator' c-max='255'></div>
+                            </div>
+                            <div class='comagic-c-messages-editor__tools-area'>
+                                <div class='comagic-c-messages-editor__tools'>
+                                    <i class='comagic-c-messages-editor__pusher comagic-c-messages-editor__pusher--smile'></i>
+                                    <i class='comagic-c-messages-editor__pusher comagic-c-messages-editor__pusher--text'
+                                       c-ref='textPusher'></i>
+                                    <div class='comagic-c-messages-editor__file-area <%=(chat.is_file_transfer ? "" : "comagic-js-file-area--disabled")%>' >
+                                        <input id='file' type='file' class='comagic-c-messages-editor__input--file -visor-no-click' c-ref='filePusher'
+                                               accept='<%=Comagic.UI.C.SUPPORTED_FILE_TYPES%>'>
+                                        <label for='file' class='comagic-c-messages-editor__pusher comagic-c-messages-editor__pusher--file -visor-no-click' c-ref='filePusherIcon'>
+                                            </label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <audio controls hidden class='comagic-c-chat__audio-control' c-ref='soundControl'>
+                <source src='<%=chat.message_audio_file%>' type='audio/mpeg'>
+            </audio>
+        </div>
+    </div>
+</div>

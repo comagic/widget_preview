@@ -1,0 +1,9 @@
+<comagic>
+    <option class='comagic-c-sitephone-field comagic-c-sitephone-field--cursor-pointer comagic-c-sitephone-field--default' disabled selected><%=Comagic.UI.C.PLACEHOLDERS["time"]%> *
+    </option>
+    <% times.forEach(function(time) { %>
+        <option class='comagic-c-sitephone-field comagic-c-sitephone-field--cursor-pointer comagic-c-sitephone-field--default'
+                value='<%=time%>'><%=Comagic.UI.toTimeString(new Date(time))%>
+        </option>
+    <% }); %>
+</comagic>

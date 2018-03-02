@@ -1,0 +1,31 @@
+<div class='comagic-с-simple-sitephone comagic-с-simple-sitephone--<%=h_position%> comagic-h-sitephone-tools-owner comagic-device-<%=Comagic.getDeviceType()%> comagic-js-simple-sitephone--hidden' c-ref='content'>
+    <div class='comagic-c-tools comagic-c-sitephone-tools comagic-c-sitephone-tools--anchor-<%=h_position%>' c-ref='closeBtn'>
+            <i class='comagic-c-sitephone-tools__btn comagic-c-sitephone-tools__btn--close'></i>
+        </div>
+    <div class='comagic-с-simple-sitephone__form'>
+        <i class='comagic-с-simple-sitephone__form-item comagic-с-simple-sitephone__icon'></i>
+        <div class='comagic-с-simple-sitephone__form-text comagic-с-simple-sitephone__form-item'><%=title%></div>
+        <div class='comagic-с-simple-sitephone__form-item comagic-h-sitephone-relative'>
+            <div class='comagic-c-sitephone-field comagic-c-sitephone-field--cursor-text comagic-c-sitephone-field--small comagic-c-sitephone-field--default'
+                 placeholder='<%=Comagic.UI.C.PLACEHOLDERS["phone"]%> *' contenteditable='true'
+                 c-name='phone' c-type='numberfield' c-validator='required phone' c-mask='<%=Comagic.UI.C.PHONE_MASK_FORMAT%>'
+                 c-ref='phone'></div>
+        </div>
+        <div class='comagic-c-sitephone-button comagic-c-sitephone-button--widget-color comagic-с-simple-sitephone__form-item comagic-c-sitephone-button--small comagic-c-sitephone-button--outside-wrapper'
+             c-type='submitbutton' c-ref='submitBtn'><%=Comagic.UI.C.CALL_SITEPHONE_TEXT%></div>
+    </div>
+    <div class='comagic-с-simple-sitephone__feedback'>
+        <div class='comagic-с-simple-sitephone__feedback-icon'></div>
+        <div class='comagic-с-simple-sitephone__feedback-text'>
+            <div class='comagic-с-simple-sitephone__feedback-title' c-ref='feedbackTitle'></div>
+            <div class='comagic-с-simple-sitephone__feedback-message' c-ref='feedbackMessage'></div>
+        </div>
+    </div>
+    <% if (banner_branding_text) { %>
+        <div class='comagic-с-simple-sitephone__links'>
+            <a href='<%= banner_branding_url %>' target='_blank'
+               class='comagic-с-simple-sitephone__banner-branding'><%=
+                banner_branding_text %></a>
+        </div>
+    <% } %>
+</div>

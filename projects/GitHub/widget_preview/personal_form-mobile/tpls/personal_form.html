@@ -1,0 +1,26 @@
+<div class="comagic-widget comagic-lead comagic-lead-personal-form">
+    <div class="comagic-lead__mask"></div>
+    <div class="comagic-lead__content <% if (banner_color_mobile === '232323') { %> comagic-lead__dark <% } else { %> comagic-lead__light <% } %>">
+        <div class="comagic-lead__work-area--personal-form">
+            <div>
+                <% if (is_image) { %>
+                    <div class="comagic-lead__image--personal-form">
+                        <img src='<%- image_url %>'>
+                    </div>
+                <% } %>
+                <div class="comagic-lead__title" style="color: #<%- button_color_mobile %>">
+                    <%- banner_title %>
+                </div>
+                <div class="comagic-lead__message">
+                    <%- banner_text %>
+                </div>
+            </div>
+        </div>
+        <div class="comagic-lead__button-area">
+            <a tabindex="0" class="comagic-lead__main-button" style="background-color: #<%- button_color_mobile %>">
+                <span><%- button_text %></span>
+            </a>
+        </div>
+        <div class="comagic-lead__button-close comagic-personal-form"></div>
+    </div>
+</div>

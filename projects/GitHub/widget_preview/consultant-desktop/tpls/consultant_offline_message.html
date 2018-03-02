@@ -1,0 +1,84 @@
+<div class='comagic-widget comagic-c-consultant-container comagic-c-consultant-container--<%=offline_message.h_position%> comagic-c-consultant-container--<%=offline_message.v_position%> comagic-js-consultant-offline-message--hidden'
+     c-ref='content'>
+    <div class='comagic-c-consultant-container__content comagic-h-consultant-tools-owner comagic-device-<%=Comagic.getDeviceType()%>'>
+        <div class='comagic-c-tools comagic-c-consultant-tools comagic-c-consultant-tools--anchor-left' c-ref='closeBtn'>
+            <i class='comagic-c-consultant-tools__btn comagic-c-consultant-tools__btn--close'></i>
+        </div>
+        <div class='comagic-c-offline-message'>
+            <div class='comagic-c-consultant-container__header'>
+                <div class='comagic-c-offline-message__header-icon'></div>
+                <div class='comagic-c-consultant-container__header-title'><%=offline_message.title%></div>
+            </div>
+            <div class='comagic-c-offline-message__body'>
+                <div class='comagic-c-offline-message__form'>
+                    <% (offline_message.fields || []).forEach(function(field) {
+                        if (field.name === 'name') { %>
+                            <div class='comagic-h-consultant-relative'>
+                                <div class='comagic-c-consultant-field comagic-c-consultant-field--one-line comagic-c-consultant-field--cursor-text comagic-c-consultant-field--default comagic-h-consultant-margin-top'
+                                     contenteditable='true' placeholder='<%=field.title%> <%=(field.is_required ? "*" : "")%>'
+                                     c-name='name' c-type='field' c-validator='<%=(field.is_required ? "required" : "")%>' c-ref='name'></div>
+                            </div>
+                        <%}
+                        if (field.name === 'email') {%>
+                            <div class='comagic-h-consultant-relative'>
+                                <div class='comagic-c-consultant-field comagic-c-consultant-field--one-line comagic-c-consultant-field--cursor-text comagic-c-consultant-field--default comagic-h-consultant-margin-top'
+                                     contenteditable='true' placeholder='<%=field.title%> <%=(field.is_required ? "*" : "")%>'
+                                     c-name='email' c-type='field' c-validator='<%=(field.is_required ? "required" : "")%> email' c-ref='email'></div>
+                            </div>
+                        <%}
+                        if (field.name === 'phone') { %>
+                            <div class='comagic-h-consultant-relative'>
+                                <div class='comagic-c-consultant-field comagic-c-consultant-field--cursor-text comagic-c-consultant-field--default comagic-h-consultant-margin-top'
+                                     contenteditable='true' placeholder='<%=field.title%> <%=(field.is_required ? "*" : "")%>'
+                                     c-name='phone' c-type='numberfield' c-validator='<%=(field.is_required ? "required" : "")%> phone' c-mask='<%=Comagic.UI.C.PHONE_MASK_FORMAT%>'
+                                     c-ref='phone'></div>
+                            </div>
+                        <%}
+                        if (field.name === 'message') {%>
+                            <div class='comagic-h-consultant-relative comagic-h-consultant-margin-top'>
+                                <div class='comagic-c-consultant-field comagic-c-consultant-field--cursor-text comagic-c-consultant-field--high  comagic-o-styled-scroll'
+                                     placeholder='<%=field.title%> <%=(field.is_required ? "*" : "")%>' contenteditable='true'
+                                     c-name='message' c-type='field' c-validator='<%=(field.is_required ? "required" : "")%>' c-ref='message'></div>
+                            </div>
+                        <%}
+                    })%>
+                    <% if (offline_message.is_groups_enabled) { %>
+                        <div class='comagic-h-consultant-relative'>
+                            <select class='comagic-c-consultant-field comagic-c-consultant-field--default comagic-c-consultant-field--select comagic-c-consultant-field--cursor-pointer comagic-h-consultant-margin-top'
+                                    c-name='group_id' c-type='field' c-validator='required' c-select='true' c-ref='group'>
+                                <option class='comagic-c-consultant-field comagic-c-consultant-field--cursor-pointer comagic-c-consultant-field--default' disabled selected><%=offline_message.group_title%> *
+                                </option>
+                                <% offline_message.allowed_groups.forEach(function(group, number) { %>
+                                    <option class='comagic-c-consultant-field comagic-c-consultant-field--cursor-pointer comagic-c-consultant-field--default'
+                                            value='<%=group.id%>'><%=group.name%>
+                                    </option>
+                                <% }); %>
+                            </select>
+                        </div>
+                    <% } %>
+                    <div class='comagic-c-consultant-button comagic-c-consultant-button--widget-color comagic-h-consultant-margin-top comagic-c-consultant-button--default'
+                         c-type='submitbutton'
+                         c-ref='submitBtn'><%=Comagic.UI.C.SEND_OFFLINE_MESSAGE_TEXT%>
+                    </div>
+                </div>
+                <div class='comagic-c-offline-message__feedback'>
+                    <div class='comagic-c-offline-message__feedback-icon'></div>
+                    <div class='comagic-c-offline-message__feedback-text'>
+                        <div class='comagic-c-offline-message__feedback-title' c-ref='feedbackTitle'></div>
+                        <div class='comagic-c-offline-message__feedback-message' c-ref='feedbackMessage'></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <% if (offline_message.banner_branding_text) { %>
+            <div class='comagic-c-consultant-container__banner-branding comagic-c-consultant-container__banner-branding--default'>
+                <a href='<%= offline_message.banner_branding_url %>' target='_blank' class='comagic-c-consultant-container__banner-branding-text'><%= offline_message.banner_branding_text %></a>
+            </div>
+        <% } %>
+        <% if (offline_message.widget_link_text) { %>
+            <div class='comagic-c-consultant-container__widget-link'>
+                <a href='<%= offline_message.widget_link_url %>' target='_blank' class='comagic-c-consultant-container__widget-link-text'><%= offline_message.widget_link_text %></a>
+            </div>
+        <% } %>
+    </div>
+</div>

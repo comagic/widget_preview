@@ -1,0 +1,11 @@
+<div class='comagic-c-chat-group-selector comagic-js-consultant-chat-group-selector--hidden'>
+    <% if (chat.allowed_groups) { %>
+        <div class='comagic-o-styled-scroll'>
+            <% chat.allowed_groups.forEach(function(group, number){%>
+                <div class='comagic-c-chat-group-selector__item' c-ref='groups[<%=number%>]' data-group-id='<%=group.id%>'>
+                    <div class='comagic-c-chat-group-selector__title comagic-h-consultant-events-none'><%=group.name%></div>
+                </div>
+            <% }); %>
+        </div>
+    <% } %>
+</div>

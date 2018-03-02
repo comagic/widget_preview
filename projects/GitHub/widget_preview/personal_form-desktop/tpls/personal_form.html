@@ -1,0 +1,23 @@
+<div class="comagic-widget comagic-personal-form-background comagic-personal-form-background--<%= v_position %>--<%= h_position %>">
+    <div class="comagic-personal-form comagic-personal-form--<%= v_position %>--<%= h_position %>">
+        <% if (is_image) { %>
+        <div class="comagic-personal-form__image__wrap">
+            <img src="<%= image_url %>" class="comagic-personal-form__image">
+        </div>
+        <div class="comagic-personal-form__close-btn comagic-personal-form__close-btn-intense"></div>
+        <% } else { %>
+        <div class="comagic-personal-form__image__wrap"></div>
+        <div class="comagic-personal-form__close-btn comagic-personal-form__close-btn-default">&times;</div>
+        <% } %>
+        <div class="comagic-personal-form__title"><%= banner_title %></div>
+        <div class="comagic-personal-form__message"><%= banner_text %></div>
+        <a tabindex="0" unselectable="on" class="comagic-personal-form__main-btn comagic-unselectable" style="background-color: #<%= button_color %>;">
+            <span style="color: #<%= Comagic.UI.getContrastColor(button_color) %>;" class="comagic-personal-form__main-btn__inner"><%= button_text %></span>
+        </a>
+        <div class="comagic-personal-form__bottom-bar">
+            <% if (banner_branding_url && banner_branding_text) { %>
+            <a href="<%= banner_branding_url %>" target="_blank" class="comagic-personal-form__bottom-bar__link"><%= banner_branding_text %></a>
+            <% } %>
+        </div>
+    </div>
+</div>

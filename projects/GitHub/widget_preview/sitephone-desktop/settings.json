@@ -1,0 +1,33 @@
+{
+  "group_title": "Группы",
+  "allowed_groups": [
+    {
+      "name": "Группа 1",
+      "id": 1
+    },
+    {
+      "name": "Группа 2",
+      "id": 2
+    }
+  ],
+  "is_groups_enabled": true,
+  "is_always_displayed": true,
+  "delayed_call_times": null,
+  "title": "Обратный звонок",
+  "is_captcha_enabled": null,
+  "is_animation_enabled": true,
+  "banner_color": "43A400",
+  "h_position": "right",
+  "v_position": "bottom",
+  "is_visible": true,
+  "is_analytics_enabled": true,
+  "is_button_displayed": true,
+  "widget_link_url": null,
+  "banner_branding_text": "CoMagic.ru",
+  "widget_link_text": null,
+  "banner_branding_url": "http://www.comagic.ru/?utm_medium=widget&utm_campaign=link_widget",
+  "is_schedule_active": true,
+  "is_rich_functional": true,
+  "is_personal_info_enabled": false,
+  "personal_info_text": "Согласен с обработкой персональных данных"
+}

@@ -1,0 +1,58 @@
+{
+  "banner_color_mobile": "FFFFFF",
+  "is_image": false,
+  "fields": [
+    {
+      "is_required": false,
+      "name": "name",
+      "title": "Как вас зовут"
+    },
+    {
+      "is_required": false,
+      "name": "phone",
+      "title": "Телефон для связи"
+    },
+    {
+      "is_required": false,
+      "name": "email",
+      "title": "E-mail для ответов"
+    },
+    {
+      "is_required": false,
+      "name": "message",
+      "title": "Вопрос"
+    }
+  ],
+  "banner_color": "43A400",
+  "group_title": "Группы",
+  "button_color": "E6E9E9",
+  "button_color_mobile": "00A500",
+  "image_url": null,
+  "is_show_on_close": false,
+  "heading_mobile": null,
+  "allowed_groups": [
+    {
+      "id": 15846,
+      "name": "Группа 1"
+    },
+    {
+      "id": 15857,
+      "name": "Группа 2"
+    },
+    {
+      "id": 16305,
+      "name": "Группа 3"
+    }
+  ],
+  "message": "Добрый день! Оставьте свой вопрос здесь, и мы скоро свяжемся с вами, чтобы рассказать обо всем, что вас интересует",
+  "banner_place": "middle_center",
+  "widget_link_text": null,
+  "widget_link_url": null,
+  "banner_branding_url": "http://www.comagic.ru/?utm_medium=widget&utm_campaign=link_widget",
+  "banner_branding_text": "CoMagic.ru",
+  "id": 43042939,
+  "h_position": "center",
+  "v_position": "middle",
+  "is_groups_enabled": true,
+  "is_personal_info_enabled": false
+}

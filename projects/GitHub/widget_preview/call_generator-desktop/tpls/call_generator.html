@@ -1,0 +1,70 @@
+<div class="comagic-widget comagic-call-generator-background">
+    <div class="comagic-call-generator <%= is_groups_enabled ? 'comagic-call-generator--with-group' : '' %>">
+        <div class="comagic-call-generator__close-btn">&times;</div>
+
+        <div class="comagic-call-generator__body">
+            <div class="comagic-call-generator__body__left-part">
+                <div class="comagic-call-generator__image-handset"<% if (is_image) { %>style="background-image: url('<%= image_url %>')"<% } %>></div>
+            </div>
+            <div class="comagic-call-generator__body__right-part">
+                <div class="comagic-call-generator__title"><%= banner_title %></div>
+                <div class="comagic-call-generator__message"><%= banner_text %></div>
+
+                <% if (is_groups_enabled) { %>
+                <div class="comagic-call-generator__field comagic-call-generator__field-group comagic-call-generator__field-group-lead">
+                    <input tabindex="-1" unselectable="on" c-name="group" c-type="field" c-validator="required" class="comagic-call-generator__field__input comagic-call-generator__field-group__input" readonly="readonly" placeholder="<%= group_title %>">
+                    <select tabindex="-1" unselectable="on" class="comagic-call-generator__field__select comagic-call-generator__field-group__select">
+                        <% allowed_groups.forEach(function(group) { %><option value="<%= group.id %>" class="comagic-call-generator__field-group__option"><%= group.name %></option></li><% }); %>
+                    </select>
+                </div>
+                <% } %>
+
+                <% if (delayed_call_times) { %>
+                    <div class="comagic-call-generator__block-delayed-call">
+                        <div class="comagic-call-generator__field comagic-call-generator__field-group comagic-call-generator__field-delayed-call-day">
+                            <input tabindex="-1" unselectable="on" c-name="delayed_call_day" class="comagic-call-generator__field__input comagic-call-generator__field-group__input comagic-call-generator__field-delayed-call-day__input"
+                                   placeholder="День">
+                            <select tabindex="-1" unselectable="on" class="comagic-call-generator__field__select comagic-call-generator__field-group__select comagic-call-generator__field-delayed-call-day__select"
+                                    c-type="field"
+                                    c-name="delayed_call_day"
+                                    c-validator="required">
+                            </select>
+                        </div>
+                        <div class="comagic-call-generator__field comagic-call-generator__field-group comagic-call-generator__field-delayed-call-time">
+                            <input tabindex="-1" unselectable="on" c-name="delayed_call_time" class="comagic-call-generator__field__input comagic-call-generator__field-group__input comagic-call-generator__field-delayed-call-time__input"
+                                   placeholder="Время">
+                            <select tabindex="-1" unselectable="on" class="comagic-call-generator__field__select comagic-call-generator__field-group__select comagic-call-generator__field-delayed-call-time__select"
+                                    c-type="field"
+                                    c-name="delayed_call_time"
+                                    c-validator="required">
+                            </select>
+                        </div>
+                    </div>
+                <% } %>
+
+                <div class="comagic-call-generator__field comagic-call-generator__field-phone">
+                    <input c-mask="+7 (___) ___-__-__" c-name="phone" c-type="numberfield" c-validator="required phone" class="comagic-call-generator__field__input comagic-call-generator__field-phone__input" type="tel" placeholder="Введите номер">
+                    <div class="comagic-call-generator__main-btn comagic-unselectable" style="background-color: #<%= button_color %>;"><span style="color: #<%= Comagic.UI.getContrastColor(button_color) %>;" class="comagic-call-generator__main-btn__inner"><%= button_text %></span></div>
+                </div>
+
+                <% if (delayed_call_times && is_schedule_active) { %>
+                    <a class="comagic-call-generator__linkbutton comagic-call-generator__linkbutton-delayed-call"></a>
+                <% } %>
+
+            </div>
+        </div>
+
+        <div class="comagic-call-generator__body comagic-call-generator__body-reverse comagic-call-generator__body--transparent comagic-call-generator-hidden">
+            <div class="comagic-call-generator__image-alarm-clock"></div>
+            <div class="comagic-call-generator__body-reverse__title">Ожидайте звонка</div>
+            <div class="comagic-call-generator__message">Сотрудник свяжется с Вами в самое ближайшее время</div>
+        </div>
+
+        <div class="comagic-call-generator__bottom-bar">
+            <% if (banner_branding_url && banner_branding_text) { %>
+            <a href="<%= banner_branding_url %>" target="_blank" class="comagic-call-generator__link comagic-call-generator__branding"><%= banner_branding_text %></a>
+            <% } %>
+        </div>
+
+    </div>
+</div>

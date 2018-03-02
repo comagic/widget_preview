@@ -1,0 +1,53 @@
+{
+  "image_url": null,
+  "allowed_groups": [
+    {
+      "id": 15846,
+      "name": "Группа 1"
+    },
+    {
+      "id": 15857,
+      "name": "Группа 2"
+    },
+    {
+      "id": 16305,
+      "name": "Группа 3"
+    }
+  ],
+  "group_title": "Группы",
+  "fields": [],
+  "delayed_call_times": false,
+  "is_schedule_active": true,
+  "banner_color": "FFD441",
+  "available_connect_ways": [
+    "sitephone",
+    "chat",
+    "offline_message"
+  ],
+  "site_id": 26760,
+  "preferred_connect_way": "chat",
+  "banner_skin": null,
+  "id": 5217,
+  "inactive_schedule_banner_text": "Мы ценим Ваше время и готовы помочь найти нужную Вам информацию. Если Вы готовы, мы обсудим это по телефону.",
+  "banner_branding_text": "CoMagic.ru",
+  "banner_branding_url": "http://www.comagic.ru/?utm_medium=widget&utm_campaign=link_widget",
+  "is_answer_countdown_timeout": false,
+  "banner_text": "Мы ценим Ваше время и готовы помочь найти нужную Вам информацию. Если Вы готовы, мы обсудим это по телефону.",
+  "staff_group_title": "Группы",
+  "inactive_schedule_banner_title": "Хотите, мы перезвоним в течение минуты?",
+  "is_delayed_call_enabled": false,
+  "answer_countdown_timeout": 60,
+  "scenario_id": 13110,
+  "button_color": "43A400",
+  "image_id": null,
+  "button_color_mobile": "00A500",
+  "is_always_displayed": false,
+  "banner_color_mobile": "FFFFFF",
+  "banner_title": "Хотите, мы перезвоним в течение минуты?",
+  "button_text": "Жду звонка",
+  "is_image": false,
+  "app_id": 1103,
+  "widget_link_text": false,
+  "widget_link_url": false,
+  "is_groups_enabled": true
+}

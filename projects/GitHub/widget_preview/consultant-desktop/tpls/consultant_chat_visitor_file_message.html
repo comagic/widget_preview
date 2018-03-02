@@ -1,0 +1,29 @@
+<div class='comagic-c-messages-log__message-box comagic-c-messages-log__message-box--right comagic-js-last-message comagic-js-consultant-message--hidden'>
+    <a class='comagic-c-messages-log__message-box-row comagic-h-consultant-flex-end comagic-h-consultant-fix-link' target="_blank"
+       href='<%=fx_link%>'>
+        <div class='comagic-c-messages-log__message-box-item comagic-c-messages-log__message-box-item--visitor'>
+            <div class='comagic-c-messages-log__message-bubble comagic-c-messages-log__message-bubble--file-visitor'>
+                <div class='comagic-c-messages-log__message-bubble-content'>
+                    <div class='comagic-c-messages-log__file-message-inner-area'>
+                        <div class='comagic-c-messages-log__file-message-inner-area-item'>
+                            <i class='comagic-c-messages-log__file-message-inner-area-item comagic-c-messages-log__file-icon'></i>
+                        </div>
+                        <div class='comagic-c-messages-log__file-message-inner-area-item'>
+                            <div class='comagic-c-messages-log__file-text'>
+                                <%=fx_name%>
+                            </div>
+                            <div class='comagic-c-messages-log__file-text comagic-c-messages-log__file-text--size'>
+                                <%=fx_size_info%>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class='comagic-c-messages-log__message-info comagic-h-consultant-flex-end'>
+                <div class='comagic-c-messages-log__message-info-item comagic-c-messages-log__message-info-item--time'>
+                    <%=Comagic.UI.toTimeString(new Date(date * 1000))%>
+                </div>
+            </div>
+        </div>
+    </a>
+</div>

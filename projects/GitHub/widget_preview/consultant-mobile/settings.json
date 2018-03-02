@@ -1,0 +1,72 @@
+{
+  "common": {
+    "banner_color": "43A400"
+  },
+  "offline_message": {
+    "group_title": "Группы",
+    "allowed_groups": [
+      {
+        "name": "Группа 1",
+        "id": 1
+      },
+      {
+        "name": "Группа 2",
+        "id": 2
+      }
+    ],
+    "is_groups_enabled": true,
+    "fields": [
+      {
+        "name": "phone",
+        "is_required": false,
+        "title": "Телефон для связи"
+      },
+      {
+        "name": "email",
+        "is_required": true,
+        "title": "E-mail для ответов"
+      },
+      {
+        "name": "message",
+        "is_required": false,
+        "title": "Ваш вопрос"
+      }
+    ],
+    "title": "Отправить заявку",
+    "is_animation_enabled": false,
+    "h_position": "right",
+    "v_position": "bottom",
+    "is_visible": true
+  },
+  "chat": {
+    "group_title": null,
+    "allowed_groups": null,
+    "is_file_transfer": true,
+    "title": "Задать вопрос в чат",
+    "fields": null,
+    "is_consultant_operator_rating": true,
+    "retention": {
+      "is_alternate_communication_way_enabled": true,
+      "alternate_communication_way_timeout": 30,
+      "messages": [
+        {
+          "timeout": 20,
+          "text": "Оператор ответит Вам через несколько секунд."
+        },
+        {
+          "timeout": 20,
+          "text": "Пожалуйста, не закрывайте чат. Операторы ответят Вам в ближайшее время."
+        },
+        {
+          "timeout": 20,
+          "text": "Все операторы заняты. Ожидайте ответа."
+        }
+      ],
+      "alternate_communication_way": "chat"
+    },
+    "is_animation_enabled": false,
+    "h_position": "right",
+    "v_position": "bottom",
+    "is_visible": false
+  }
+}

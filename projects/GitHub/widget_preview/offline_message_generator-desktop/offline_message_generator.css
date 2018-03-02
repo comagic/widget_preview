@@ -1,0 +1,656 @@
+@charset "UTF-8";
+@keyframes popup-right-life {
+    0% {
+        left: 100%;
+    }
+    9.09091% {
+        left: 0%;
+    }
+    90.90909% {
+        left: 0%;
+    }
+    100% {
+        left: 100%;
+    }
+}
+
+@keyframes popup-left-life {
+    0% {
+        left: -100%;
+    }
+    9.09091% {
+        left: 0%;
+    }
+    90.90909% {
+        left: 0%;
+    }
+    100% {
+        left: -100%;
+    }
+}
+
+.comagic-widget--hidden {
+    visibility: hidden;
+}
+
+.comagic-unselectable {
+    -moz-user-select: -moz-none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+[c-draggable="x"] [c-dragger] {
+    cursor: ew-resize;
+}
+
+[c-draggable="x"] [c-dragger] *:not([c-nodragger]) {
+    cursor: ew-resize;
+    pointer-events: none;
+}
+
+[c-draggable="y"] [c-dragger] {
+    cursor: ns-resize;
+}
+
+[c-draggable="y"] [c-dragger] *:not([c-nodragger]) {
+    cursor: ns-resize;
+    pointer-events: none;
+}
+
+[c-draggable="xy"] [c-dragger] {
+    cursor: move;
+}
+
+[c-draggable="xy"] [c-dragger] *:not([c-nodragger]) {
+    cursor: move;
+    pointer-events: none;
+}
+
+.comagic-offline-message-generator__field {
+    margin: 0 0 5px 0;
+    position: relative;
+}
+
+.comagic-offline-message-generator__field.comagic-offline-message-generator__field--error::after, .comagic-offline-message-generator__field.comagic-offline-message-generator__field--error::before {
+    position: absolute;
+    pointer-events: none;
+    font-family: Arial, Helvetica, Trebuchet, sans;
+    font-size: 12px;
+    line-height: 12px;
+}
+
+.comagic-offline-message-generator__field.comagic-offline-message-generator__field--error::before {
+    content: ' ';
+    width: 17px;
+    height: 17px;
+    right: 6px;
+    top: 6px;
+    background-image: url(//app2.comagic.ru/widget/images/common/desktop/error.png);
+    z-index: 1;
+}
+
+.comagic-offline-message-generator__field.comagic-offline-message-generator__field--error::after {
+    position: absolute;
+    color: red;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    right: 0;
+    line-height: 30px;
+    text-align: right;
+    padding-right: 31px;
+    box-sizing: border-box;
+}
+
+.comagic-offline-message-generator__field.comagic-offline-message-generator__field--error--required::after {
+    content: 'Необходимо заполнить';
+}
+
+.comagic-offline-message-generator__field.comagic-offline-message-generator__field--error--required.comagic-offline-message-generator__field-name::after {
+    content: 'Укажите имя';
+}
+
+.comagic-offline-message-generator__field.comagic-offline-message-generator__field--error--required.comagic-offline-message-generator__field-phone::after {
+    content: 'Укажите телефон';
+}
+
+.comagic-offline-message-generator__field.comagic-offline-message-generator__field--error--required.comagic-offline-message-generator__field-email::after {
+    content: 'Укажите ваш email';
+}
+
+.comagic-offline-message-generator__field.comagic-offline-message-generator__field--error--required.comagic-offline-message-generator__field-personal-info .comagic-offline-message-generator__field__label--personal-info {
+    color: red;
+}
+
+.comagic-offline-message-generator__field.comagic-offline-message-generator__field--error--required.comagic-offline-message-generator__field-personal-info::before {
+    display: none;
+}
+
+.comagic-offline-message-generator__field.comagic-offline-message-generator__field--error--required.comagic-offline-message-generator__field-personal-info::after {
+    display: none;
+}
+
+.comagic-offline-message-generator__field__input {
+    text-indent: 1px;
+    box-sizing: border-box;
+    border-radius: 4px;
+    background-color: white;
+    color: #000;
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    box-shadow: inset 0 2px 1px 0 rgba(212, 212, 212, 0.39);
+    width: 100%;
+    line-height: 12px;
+    font-family: Arial, Helvetica, Trebuchet, sans;
+    font-size: 12px;
+    height: 30px;
+    padding: 6px;
+}
+
+.comagic-offline-message-generator__field__input::-webkit-input-placeholder {
+    font-style: italic;
+    font-size: 12px;
+    padding-bottom: 5px;
+    color: #757575;
+    opacity: 1;
+}
+
+.comagic-offline-message-generator__field__input:-moz-placeholder {
+    font-style: italic;
+    font-size: 12px;
+    padding-bottom: 5px;
+    color: #757575;
+    opacity: 1;
+}
+
+.comagic-offline-message-generator__field__input::-moz-placeholder {
+    font-style: italic;
+    font-size: 12px;
+    padding-bottom: 5px;
+    color: #757575;
+    opacity: 1;
+}
+
+.comagic-offline-message-generator__field__input:-ms-input-placeholder {
+    font-style: italic;
+    font-size: 12px;
+    padding-bottom: 5px;
+    color: #757575;
+    opacity: 1;
+}
+
+.comagic-offline-message-generator__field__input:focus {
+    outline: none;
+}
+
+.comagic-offline-message-generator__field__input:focus::-webkit-input-placeholder {
+    color: transparent;
+}
+
+.comagic-offline-message-generator__field__input:focus:-moz-placeholder {
+    color: transparent;
+}
+
+.comagic-offline-message-generator__field__input:focus::-moz-placeholder {
+    color: transparent;
+}
+
+.comagic-offline-message-generator__field__input:focus:-ms-input-placeholder {
+    color: transparent;
+}
+
+.comagic-offline-message-generator__field__input::-ms-clear {
+    display: none;
+}
+
+.comagic-offline-message-generator__field__input.comagic-offline-message-generator__field--error__input {
+    color: red;
+}
+
+.comagic-offline-message-generator__field__input.comagic-offline-message-generator__field--error__input::-webkit-input-placeholder {
+    color: transparent;
+}
+
+.comagic-offline-message-generator__field__input.comagic-offline-message-generator__field--error__input:-moz-placeholder {
+    color: transparent;
+}
+
+.comagic-offline-message-generator__field__input.comagic-offline-message-generator__field--error__input::-moz-placeholder {
+    color: transparent;
+}
+
+.comagic-offline-message-generator__field__input.comagic-offline-message-generator__field--error__input:-ms-input-placeholder {
+    color: transparent;
+}
+
+.comagic-offline-message-generator__field-textarea {
+    height: 87px;
+}
+
+.comagic-offline-message-generator__field-textarea__input {
+    resize: none;
+    height: 87px;
+    text-transform: none;
+    margin: 0;
+    cursor: text;
+    overflow: hidden;
+    text-align: left;
+}
+
+.comagic-offline-message-generator__field-textarea__input:empty:before {
+    color: #757575;
+    font-style: italic;
+    font-size: 12px;
+    content: attr(placeholder);
+    display: inline;
+}
+
+.comagic-offline-message-generator__field-textarea__input:empty:focus:before {
+    content: "";
+}
+
+.comagic-offline-message-generator__field-textarea__input.comagic-offline-message-generator__field--error__input:empty:before {
+    color: transparent;
+}
+
+.comagic-offline-message-generator__field-group__input, .comagic-offline-message-generator__field-combobox__input {
+    width: 100%;
+    background: url(//app2.comagic.ru/widget/images/common/desktop/trigger-combobox.png) no-repeat;
+    background-position: right 12px center;
+    background-color: #fff;
+}
+
+.comagic-offline-message-generator__field-group__select, .comagic-offline-message-generator__field-combobox__select {
+    line-height: 32px;
+    border: 1px solid darkgrey;
+    font-family: "Open Sans CoMagic", sans-serif;
+    font-weight: 600;
+    font-size: 12px;
+    color: #000;
+    box-shadow: none;
+    border-radius: 4px;
+    height: 30px;
+    padding: 0 8px;
+    background-color: white;
+    box-sizing: border-box;
+    width: 100%;
+    opacity: 0;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+}
+
+.comagic-offline-message-generator__field-group__select::-webkit-input-placeholder, .comagic-offline-message-generator__field-combobox__select::-webkit-input-placeholder {
+    font-size: 12px;
+    font-weight: normal;
+    font-style: italic;
+}
+
+.comagic-offline-message-generator__field-group__select:-moz-placeholder, .comagic-offline-message-generator__field-combobox__select:-moz-placeholder {
+    font-size: 12px;
+    font-weight: normal;
+    font-style: italic;
+}
+
+.comagic-offline-message-generator__field-group__select::-moz-placeholder, .comagic-offline-message-generator__field-combobox__select::-moz-placeholder {
+    font-size: 12px;
+    font-weight: normal;
+    font-style: italic;
+}
+
+.comagic-offline-message-generator__field-group__select:-ms-input-placeholder, .comagic-offline-message-generator__field-combobox__select:-ms-input-placeholder {
+    font-size: 12px;
+    font-weight: normal;
+    font-style: italic;
+}
+
+.comagic-offline-message-generator__background-submit-popup {
+    position: absolute;
+    overflow: hidden;
+    pointer-events: none;
+    display: inline-block;
+    left: 50%;
+    margin-left: -147px;
+    top: -106px;
+}
+
+.comagic-offline-message-generator__submit-popup {
+    margin: 10px;
+    width: 270px;
+    height: 92px;
+    position: relative;
+    border-radius: 13px;
+    background-color: rgba(0, 0, 0, 0.5);
+    background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(255, 255, 255, 0)), to(rgba(0, 0, 0, 0.5)));
+    background-image: -webkit-linear-gradient(rgba(255, 255, 255, 0), rgba(0, 0, 0, 0.5));
+    background-image: -moz-linear-gradient(rgba(255, 255, 255, 0), rgba(0, 0, 0, 0.5));
+    background-image: -o-linear-gradient(rgba(255, 255, 255, 0), rgba(0, 0, 0, 0.5));
+    background-image: -ms-linear-gradient(rgba(255, 255, 255, 0), rgba(0, 0, 0, 0.5));
+    background-image: linear-gradient(rgba(255, 255, 255, 0), rgba(0, 0, 0, 0.5));
+    background-repeat: repeat-x;
+    -webkit-background-size: 100% 100%;
+    -moz-background-size: 100% 100%;
+    -o-background-size: 100% 100%;
+    background-size: 100% 100%;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    box-shadow: 4px 4px 14px 0 rgba(0, 0, 0, 0.1);
+    font-family: Arial, Helvetica, sans-serif;
+    pointer-events: auto;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    animation-fill-mode: forwards;
+}
+
+.comagic-offline-message-generator__submit-popup.comagic-offline-message-generator__submit-popup--success {
+    color: #B7EB81;
+}
+
+.comagic-offline-message-generator__submit-popup.comagic-offline-message-generator__submit-popup--failure {
+    color: #FF7A77;
+}
+
+.comagic-offline-message-generator__submit-popup__title {
+    font-size: 14px;
+    margin: 0;
+}
+
+.comagic-offline-message-generator__submit-popup__message {
+    font-size: 12px;
+    color: #D4D4D4;
+    margin: 0;
+}
+
+.comagic-offline-message-generator__background-submit-popup--top {
+    top: initial;
+    bottom: -106px;
+}
+
+.comagic-offline-message-generator__submit-popup {
+    left: -100%;
+}
+
+.comagic-offline-message-generator__submit-popup:not(.comagic-offline-message-generator__submit-popup--hidden) {
+    animation: popup-left-life 3.3s;
+}
+
+.comagic-offline-message-generator__submit-popup--right {
+    left: 100%;
+}
+
+.comagic-offline-message-generator__submit-popup--right:not(.comagic-offline-message-generator__submit-popup--hidden) {
+    animation: popup-right-life 3.3s;
+}
+
+.comagic-offline-message-generator-background {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font: inherit;
+    font-size: 100%;
+    font-family: Arial, Helvetica, sans-serif;
+    vertical-align: baseline;
+    text-align: left;
+    box-sizing: content-box;
+    -moz-box-sizing: content-box;
+    -ms-box-sizing: content-box;
+    -webkit-box-sizing: content-box;
+    background-image: none;
+    height: auto;
+    position: static;
+    opacity: .99;
+    float: none;
+    display: flex;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    zoom: 1;
+    pointer-events: none;
+    z-index: 100005;
+}
+
+.comagic-offline-message-generator-background--top--left {
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+
+.comagic-offline-message-generator-background--middle--left {
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.comagic-offline-message-generator-background--bottom--left {
+    align-items: flex-end;
+    justify-content: flex-start;
+}
+
+.comagic-offline-message-generator-background--top--right {
+    align-items: flex-start;
+    justify-content: flex-end;
+}
+
+.comagic-offline-message-generator-background--middle--right {
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.comagic-offline-message-generator-background--bottom--right {
+    align-items: flex-end;
+    justify-content: flex-end;
+}
+
+.comagic-offline-message-generator-background--middle--center {
+    align-items: center;
+    justify-content: center;
+    pointer-events: auto;
+    background-color: rgba(0, 0, 0, 0.3);
+}
+
+.comagic-offline-message-generator {
+    transition: transform .3s, visibility .3s;
+    padding: 10px 30px;
+    pointer-events: none;
+    color: white;
+}
+
+.comagic-offline-message-generator--submitted {
+    transition-delay: 3s;
+}
+
+.comagic-offline-message-generator--top--left {
+    transform: translateY(-100%);
+}
+
+.comagic-offline-message-generator--middle--left {
+    margin-bottom: 4%;
+    transform: translateX(-100%);
+}
+
+.comagic-offline-message-generator--bottom--left {
+    transform: translateY(100%);
+}
+
+.comagic-offline-message-generator--top--right {
+    transform: translateY(-100%);
+}
+
+.comagic-offline-message-generator--middle--right {
+    margin-bottom: 4%;
+    transform: translateX(100%);
+}
+
+.comagic-offline-message-generator--bottom--right {
+    transform: translateY(100%);
+}
+
+.comagic-offline-message-generator--middle--center {
+    margin-bottom: 4%;
+    visibility: hidden;
+}
+
+.comagic-offline-message-generator--shown {
+    transform: none;
+    visibility: visible;
+}
+
+.comagic-offline-message-generator--with-image__inner {
+    margin-top: 78px;
+}
+
+.comagic-offline-message-generator__inner {
+    pointer-events: auto;
+    box-sizing: border-box;
+    width: 322px;
+    border-radius: 8px;
+    padding: 40px 36px 0 36px;
+    position: relative;
+    background-color: #7CB342;
+}
+
+.comagic-offline-message-generator__image {
+    box-sizing: border-box;
+    width: 156px;
+    height: 156px;
+    border: solid 5px #D7DCDE;
+    border-radius: 85px;
+    margin: 0 auto 7px auto;
+    margin-top: -118px;
+    background-size: 146px 146px;
+    background-position: center;
+}
+
+.comagic-offline-message-generator__close-btn {
+    cursor: pointer;
+    position: absolute;
+    right: 0;
+    top: 0;
+    font: 12px Arial, Helvetica, Trebuchet, sans;
+    height: 26px;
+    width: 26px;
+    margin: 3px 4px 0 0;
+    opacity: .46;
+    font-size: 32px;
+    line-height: 28px;
+    text-align: left;
+}
+
+.comagic-offline-message-generator__message {
+    text-align: center;
+    font-size: 14px;
+    line-height: 18px;
+    font-family: Arial, Helvetica, Trebuchet, sans;
+    opacity: .8;
+    word-wrap: break-word;
+}
+
+.comagic-offline-message-generator__field {
+    margin: 6px 0 0 0;
+}
+
+.comagic-offline-message-generator__field.comagic-offline-message-generator__field--error::after {
+    line-height: 34px;
+}
+
+.comagic-offline-message-generator__field.comagic-offline-message-generator__field-textarea {
+    height: 80px;
+}
+
+.comagic-offline-message-generator__field__input {
+    height: 34px;
+    text-indent: 1px;
+}
+
+.comagic-offline-message-generator__field-textarea__input {
+    height: 80px;
+}
+
+.comagic-offline-message-generator__main-btn-area {
+    text-align: center;
+}
+
+.comagic-offline-message-generator__main-btn {
+    max-width: 210px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    vertical-align: bottom;
+    display: inline-block;
+    background-image: linear-gradient(180deg, rgba(255, 255, 255, 0.15) 0, rgba(255, 255, 255, 0) 100%);
+    box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.16), 0 2px 3px rgba(0, 0, 0, 0.3);
+    text-decoration: none;
+    border-radius: 3px;
+    padding: 0 20px;
+    min-width: 0;
+    cursor: pointer;
+    line-height: 16px;
+    margin-top: 15px;
+    height: 38px;
+    outline: none;
+}
+
+.comagic-offline-message-generator__main-btn:hover {
+    background-image: linear-gradient(180deg, rgba(255, 255, 255, 0.3) 0, rgba(255, 255, 255, 0) 100%);
+}
+
+.comagic-offline-message-generator__main-btn:active {
+    background-image: linear-gradient(360deg, rgba(255, 255, 255, 0.1) 0, rgba(255, 255, 255, 0) 100%);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.25) inset;
+}
+
+.comagic-offline-message-generator__main-btn__inner {
+    text-decoration: none;
+    font-family: Arial;
+    font-weight: bold;
+    font-size: 14px;
+    text-transform: uppercase;
+    line-height: 42px;
+    display: block;
+}
+
+.comagic-offline-message-generator__bottom-bar {
+    overflow: auto;
+    font-size: 12px;
+    font-family: Arial, Helvetica, Trebuchet, sans;
+    text-align: right;
+    padding: 12px 0 0 0;
+}
+
+a.comagic-offline-message-generator__bottom-bar__link {
+    color: white;
+    padding-bottom: 2px;
+    font-size: 10px;
+    text-decoration: underline;
+    font-family: Arial, Helvetica, Trebuchet, sans;
+    opacity: .8;
+    margin-bottom: 13px;
+}
+
+.comagic-offline-message-generator__widget-link {
+    float: left;
+    text-align: center;
+}
+
+.comagic-offline-message-generator__branding {
+    float: right;
+}
+
+.comagic-offline-message-generator__wrap {
+    position: relative;
+}
+
+.comagic-offline-message-generator__field__input--personal-info {
+    border: none;
+    box-shadow: none;
+    width: 15px;
+    height: 15px;
+    float: left;
+    margin: 3px 3px 3px 4px;
+}
+
+.comagic-offline-message-generator__field__label {
+    font-size: 14px;
+}

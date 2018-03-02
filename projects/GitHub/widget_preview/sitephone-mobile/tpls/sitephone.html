@@ -1,0 +1,85 @@
+<div class='comagic-widget comagic-c-sitephone-container comagic-js-sitephone--hidden' c-ref='content'>
+    <div class='comagic-c-sitephone-container__content comagic-h-sitephone-tools-owner'>
+        <div class='comagic-c-tools comagic-c-tools--anchor-left' c-ref='closeBtn'>
+            <i class='comagic-c-tools__btn comagic-c-tools__btn--close'></i>
+        </div>
+        <div class='comagic-c-sitephone'>
+            <div class='comagic-c-sitephone-container__header'>
+                <div class='comagic-c-sitephone__header-icon'></div>
+                <div class='comagic-c-sitephone-container__header-title'><%=title%></div>
+            </div>
+            <div class='comagic-c-sitephone__body'>
+                <div class='comagic-c-sitephone__form'>
+                    <div class='comagic-h-sitephone-relative comagic-h-sitephone-field-fix comagic-h-sitephone-margin-top'>
+                        <input type='tel' class='comagic-c-sitephone-field'
+                             placeholder='<%=Comagic.UI.C.PLACEHOLDERS["phone"]%> *'
+                             c-name='phone' c-type='numberfield' c-validator='required phone' c-mask='<%=Comagic.UI.C.PHONE_MASK_FORMAT%>'
+                             c-ref='phone'>
+                    </div>
+                    <% if (is_groups_enabled) { %>
+                        <div class='comagic-h-sitephone-relative'>
+                            <select class='comagic-c-sitephone-field comagic-c-sitephone-field--default comagic-c-sitephone-field--select comagic-h-sitephone-margin-top'
+                                    placeholder='<%=group_title%> *'
+                                    c-select='true' c-validator='required' c-name='group_id' c-ref='group' c-type='field'>
+                                <option disabled selected value=''><%=group_title%> *</option>
+                                <% allowed_groups.forEach(function(group, number) { %>
+                                    <option value='<%=group.id%>'><%=group.name%></option>
+                                <% }); %>
+                            </select>
+                        </div>
+                    <% } %>
+                    <% if (delayed_call_times) { %>
+                    <div class='<%=(!is_schedule_active ? "comagic-js-date-fields--is-not-active" : "comagic-js-date-fields--is-active")%> comagic-h-sitephone-margin-top' c-ref='dateFields'>
+                        <div class='comagic-c-sitephone-field-title comagic-c-sitephone-field-title--date-change comagic-h-sitephone-decorate-as-link' c-ref='dateChangeTrigger'><%=Comagic.UI.C.DATE_CHANGE_TITLE_TEXT%></div>
+                        <div class='comagic-c-sitephone-field-title comagic-c-sitephone-field-title--date-now comagic-h-sitephone-decorate-as-link' c-ref='dateNowTrigger'><%=Comagic.UI.C.DATE_NOW_TITLE_TEXT%></div>
+                        <div class='comagic-c-sitephone-field-list comagic-c-sitephone-field-list--double comagic-c-sitephone-field-list--date comagic-h-sitephone-margin-top'>
+                            <select class='comagic-c-sitephone-field comagic-c-sitephone-field--default comagic-c-sitephone-field--select comagic-c-sitephone-field--date'
+                                    placeholder='<%=Comagic.UI.C.PLACEHOLDERS["date"]%> *'
+                                    c-select='true' c-validator='required' c-name='date' c-ref='date' c-type='field'>
+                                <option disabled selected value=''><%=Comagic.UI.C.PLACEHOLDERS["date"]%> *</option>
+                                <% delayed_call_times.forEach(function(timeProps, numberProps) { %>
+                                    <option value='<%=numberProps%>'><%=Comagic.UI.toDateString(new Date(timeProps.date))%></option>
+                                <% }); %>
+                            </select>
+                            <select class='comagic-c-sitephone-field comagic-c-sitephone-field--default comagic-c-sitephone-field--time comagic-c-sitephone-field--select'
+                                    placeholder='<%=Comagic.UI.C.PLACEHOLDERS["time"]%> *'
+                                    c-select='true' c-validator='required' c-name='delayed_call_time' c-ref='delayedCallTime' c-type='field'>
+                            </select>
+                        </div>
+                    </div>
+                    <% } %>
+                    <% if (is_captcha_enabled) { %>
+                        <div class='comagic-c-sitephone-field-list--double comagic-h-sitephone-margin-top comagic-h-sitephone-relative comagic-h-sitephone-field-fix comagic-h-sitephone-field-fix--captcha'>
+                            <input type='number' class='comagic-c-sitephone-field comagic-c-sitephone-field--captcha'
+                                 placeholder='<%=Comagic.UI.C.PLACEHOLDERS["captcha"]%> *'
+                                 c-name='captcha_value' c-type='numberfield' c-validator='required'
+                                 c-ref='captcha'>
+                            <img class='comagic-c-sitephone-field__image comagic-c-sitephone-field__image--captcha' src='' c-ref='captchaImg'/>
+                            <div class='comagic-h-sitephone-hidden' c-type='field' c-name='captcha_key' c-ref='captchaKey'></div>
+                            <div c-ref='captchaUpdateBtn' class='comagic-c-spinner-button'></div>
+                        </div>
+                    <% } %>
+                    <div class='comagic-c-sitephone-button comagic-c-sitephone-button--widget-color comagic-h-sitephone-margin-top comagic-c-sitephone-button--default'
+                         c-type='submitbutton'
+                         c-ref='submitBtn'><%=Comagic.UI.C.CALL_SITEPHONE_TEXT%>
+                    </div>
+                </div>
+                <div class='comagic-c-sitephone__feedback'>
+                    <div class='comagic-c-sitephone__feedback-icon'></div>
+                    <div class='comagic-c-sitephone__feedback-text' c-ref='feedbackText'>
+                        <div class='comagic-c-sitephone__feedback-title' c-ref='feedbackTitle'>
+                        </div>
+                        <div class='comagic-c-sitephone__feedback-message' c-ref='feedbackMessage'>
+                        </div>
+                    </div>
+                </div>
+                <% if (banner_branding_text) { %>
+                    <div class='comagic-c-sitephone-container__banner-branding comagic-c-sitephone-container__banner-branding--default'>
+                        <a href='<%= banner_branding_url %>' target='_blank' class='comagic-c-sitephone-container__banner-branding-text'><%= banner_branding_text %></a>
+                    </div>
+                <% } %>
+            </div>
+        </div>
+    </div>
+    <div class='comagic-c-sitephone-container__landscape'></div>
+</div>

@@ -1,0 +1,29 @@
+<div class='comagic-c-messages-log__message-box comagic-c-messages-log__message-box--left comagic-js-last-message comagic-js-consultant-message--hidden'>
+    <div class='comagic-c-messages-log__message-box-row'>
+        <div class='comagic-c-messages-log__message-box-item'>
+            <i class='comagic-c-messages-log__avatar comagic-c-messages-log__avatar--bot'></i>
+        </div>
+        <div class='comagic-c-messages-log__message-box-item comagic-c-messages-log__message-box-item--bot' c-ref='content'>
+            <div class='comagic-c-messages-log__message-bubble comagic-c-messages-log__message-bubble--bot comagic-c-messages-log__message-bubble--collection-data'>
+                <div class='comagic-c-messages-log__message-bubble-content'>
+                    <%=text%>
+                    <div class='comagic-c-consultant-field comagic-c-consultant-field--cursor-text comagic-c-consultant-field--default comagic-c-consultant-field--one-line comagic-h-consultant-margin-top'
+                         contenteditable='true' placeholder='<%=Comagic.UI.C.PLACEHOLDERS["email"]%> *'
+                         c-type='field'
+                         c-name='email' c-validator='required email'
+                         c-ref='email'></div>
+                    <div class='comagic-c-consultant-button comagic-c-consultant-button--widget-color comagic-h-consultant-margin-top comagic-c-consultant-button--default'
+                         c-type='submitbutton'
+                         c-ref='submitBtn'><%=buttonText%></div>
+            </div>
+        </div>
+        <div class='comagic-c-messages-log__message-bubble comagic-c-messages-log__message-bubble--bot comagic-c-messages-log__message-bubble--feedback'>
+            <%=feedbackText%>
+        </div>
+        <div class='comagic-c-messages-log__message-info comagic-h-consultant-flex-end'>
+            <div class='comagic-c-messages-log__message-info-item comagic-c-messages-log__message-info-item--time'>
+                <%=Comagic.UI.toTimeString(new Date())%>
+            </div>
+        </div>
+    </div>
+</div>

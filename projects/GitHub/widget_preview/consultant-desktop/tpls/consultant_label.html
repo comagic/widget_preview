@@ -1,0 +1,17 @@
+<div class='comagic-c-consultant-label <%=(chat.is_animation_enabled ? "" : "comagic-js-consultant-label--animation-disabled")%> comagic-c-consultant-label--<%=chat.v_position%> comagic-c-consultant-label--<%=chat.h_position%> comagic-js-consultant-label--hidden'>
+    <div class='comagic-c-consultant-label__counter' c-ref='counter'></div>
+    <div class='comagic-c-consultant-label__bubble comagic-c-consultant-label__bubble--empty-outer comagic-c-consultant-label__bubble--empty-outer-animation comagic-c-consultant-label__bubble--with-delay comagic-h-consultant-opacity comagic-h-consultant-events-none'></div>
+    <div class='comagic-c-consultant-label__bubble comagic-c-consultant-label__bubble--empty-inner comagic-c-consultant-label__bubble--empty-inner-animation comagic-c-consultant-label__bubble--with-delay comagic-h-consultant-opacity comagic-h-consultant-events-none'></div>
+    <div class='comagic-c-consultant-label__bubble comagic-c-consultant-label__bubble--solid comagic-c-consultant-label__bubble--solid-color comagic-c-consultant-label__bubble--with-delay <%=(Comagic.UI.isIE ? "" : "comagic-c-consultant-label__bubble--solid-animation")%>  comagic-h-consultant-opacity comagic-h-consultant-events-none'></div>
+    <div class='comagic-c-consultant-label__bubble comagic-c-consultant-label__bubble--solid comagic-c-consultant-label__bubble--solid-color comagic-h-consultant-events-none'></div>
+    <div class='comagic-c-consultant-label__bubble comagic-c-consultant-label__bubble--solid comagic-c-consultant-label__bubble--shadow comagic-h-consultant-events-none'></div>
+
+    <div class='comagic-c-consultant-label__content comagic-c-consultant-label__content--chat'>
+        <i class='comagic-c-consultant-label__icon comagic-c-consultant-label__icon--chat comagic-c-consultant-label__icon--with-delay comagic-c-consultant-label__icon--not-shaded comagic-h-consultant-events-none'></i>
+        <div c-ref='triggerChat' class="comagic-c-consultant-label__bubble comagic-c-consultant-label__bubble--solid"></div>
+    </div>
+    <div class='comagic-c-consultant-label__content comagic-c-consultant-label__content--offline-message'>
+        <i class='comagic-c-consultant-label__icon--offline-message comagic-c-consultant-label__icon comagic-c-consultant-label__icon--with-delay comagic-c-consultant-label__icon--not-shaded comagic-h-consultant-events-none'></i>
+        <div c-ref='triggerOfflineMessage' class="comagic-c-consultant-label__bubble comagic-c-consultant-label__bubble--solid"></div>
+    </div>
+</div>

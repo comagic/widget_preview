@@ -1,0 +1,298 @@
+@keyframes popup-right-life {
+    0% {
+        left: 100%;
+    }
+    9.09091% {
+        left: 0%;
+    }
+    90.90909% {
+        left: 0%;
+    }
+    100% {
+        left: 100%;
+    }
+}
+
+@keyframes popup-left-life {
+    0% {
+        left: -100%;
+    }
+    9.09091% {
+        left: 0%;
+    }
+    90.90909% {
+        left: 0%;
+    }
+    100% {
+        left: -100%;
+    }
+}
+
+.comagic-widget--hidden {
+    visibility: hidden;
+}
+
+.comagic-unselectable {
+    -moz-user-select: -moz-none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+[c-draggable="x"] [c-dragger] {
+    cursor: ew-resize;
+}
+
+[c-draggable="x"] [c-dragger] *:not([c-nodragger]) {
+    cursor: ew-resize;
+    pointer-events: none;
+}
+
+[c-draggable="y"] [c-dragger] {
+    cursor: ns-resize;
+}
+
+[c-draggable="y"] [c-dragger] *:not([c-nodragger]) {
+    cursor: ns-resize;
+    pointer-events: none;
+}
+
+[c-draggable="xy"] [c-dragger] {
+    cursor: move;
+}
+
+[c-draggable="xy"] [c-dragger] *:not([c-nodragger]) {
+    cursor: move;
+    pointer-events: none;
+}
+
+.comagic-personal-form-background {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font: inherit;
+    font-size: 100%;
+    font-family: Arial, Helvetica, sans-serif;
+    vertical-align: baseline;
+    text-align: left;
+    box-sizing: content-box;
+    -moz-box-sizing: content-box;
+    -ms-box-sizing: content-box;
+    -webkit-box-sizing: content-box;
+    background-image: none;
+    height: auto;
+    position: static;
+    opacity: .99;
+    float: none;
+    display: flex;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    zoom: 1;
+    pointer-events: none;
+    z-index: 100005;
+}
+
+.comagic-personal-form-background--top--left {
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+
+.comagic-personal-form-background--top--right {
+    align-items: flex-start;
+    justify-content: flex-end;
+}
+
+.comagic-personal-form-background--bottom--left {
+    align-items: flex-end;
+    justify-content: flex-start;
+}
+
+.comagic-personal-form-background--bottom--right {
+    align-items: flex-end;
+    justify-content: flex-end;
+}
+
+.comagic-personal-form-background--middle--left {
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.comagic-personal-form-background--middle--right {
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.comagic-personal-form-background--middle--center {
+    align-items: center;
+    justify-content: center;
+    pointer-events: auto;
+    background-color: rgba(0, 0, 0, 0.3);
+}
+
+.comagic-personal-form--top--left {
+    transform: translateY(-110%);
+}
+
+.comagic-personal-form--top--right {
+    transform: translateY(-110%);
+}
+
+.comagic-personal-form--middle--left {
+    margin-bottom: 4%;
+    transform: translateX(-110%);
+}
+
+.comagic-personal-form--middle--right {
+    margin-bottom: 4%;
+    transform: translateX(110%);
+}
+
+.comagic-personal-form--middle--center {
+    margin-bottom: 4%;
+}
+
+.comagic-personal-form--bottom--left {
+    transform: translateY(110%);
+}
+
+.comagic-personal-form--bottom--right {
+    transform: translateY(110%);
+}
+
+.comagic-personal-form {
+    min-height: 100px;
+    width: 505px;
+    border-radius: 8px;
+    box-shadow: 0 3px 30px 0 rgba(0, 0, 0, 0.5);
+    padding-bottom: 42px;
+    text-align: center;
+    pointer-events: auto;
+    transition: transform .3s;
+    background-color: #CFCCCC;
+    color: black;
+    position: relative;
+}
+
+.comagic-personal-form--showed {
+    transform: none;
+}
+
+.comagic-personal-form__image__wrap {
+    min-height: 25px;
+    margin-bottom: 22px;
+    text-align: left;
+}
+
+.comagic-personal-form__image {
+    width: 100%;
+    border-radius: 8px 8px 0 0;
+}
+
+.comagic-personal-form__close-btn {
+    cursor: pointer;
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+
+.comagic-personal-form__close-btn-intense {
+    background-image: url(//app.comagic.ru/widget/images/lead/desktop/lead-close-button.png);
+    height: 26px;
+    width: 26px;
+    margin-top: 11px;
+    margin-right: 11px;
+}
+
+.comagic-personal-form__close-btn-default {
+    font: 12px Arial, Helvetica, Trebuchet, sans;
+    height: 26px;
+    width: 26px;
+    margin-top: 3px;
+    margin-right: 0;
+    color: #868686;
+    opacity: .46;
+    font-size: 32px;
+    line-height: 28px;
+    text-align: left;
+}
+
+.comagic-personal-form__title {
+    font-family: "Open Sans CoMagic", sans-serif;
+    font-weight: 300;
+    font-size: 28px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    line-height: 33px;
+    padding: 0 45px;
+    text-align: center;
+}
+
+.comagic-personal-form__message {
+    font-family: "Open Sans CoMagic", sans-serif;
+    font-weight: 400;
+    font-size: 13px;
+    line-height: 20px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    max-height: 90px;
+    margin: 9px 0 21px;
+    padding: 0 45px;
+    text-align: center;
+}
+
+.comagic-personal-form__main-btn {
+    display: inline-block;
+    background: none;
+    background-image: linear-gradient(180deg, rgba(255, 255, 255, 0.15) 0, rgba(255, 255, 255, 0) 100%);
+    box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.16), 0 2px 3px rgba(0, 0, 0, 0.3);
+    height: 42px;
+    text-decoration: none;
+    border-radius: 3px;
+    padding: 0 20px;
+    min-width: 0;
+    cursor: pointer;
+    outline: none;
+    margin: 0 0 4px 0;
+}
+
+.comagic-personal-form__main-btn:hover {
+    background-image: linear-gradient(180deg, rgba(255, 255, 255, 0.3) 0, rgba(255, 255, 255, 0) 100%);
+}
+
+.comagic-personal-form__main-btn:active {
+    background-image: linear-gradient(360deg, rgba(255, 255, 255, 0.1) 0, rgba(255, 255, 255, 0) 100%);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.25) inset;
+}
+
+.comagic-personal-form__main-btn__inner {
+    text-decoration: none;
+    font-family: Arial;
+    font-weight: bold;
+    font-size: 14px;
+    text-transform: uppercase;
+    line-height: 42px;
+    display: block;
+}
+
+.comagic-personal-form__bottom-bar {
+    position: absolute;
+    bottom: 14px;
+    left: 230px;
+    right: 20px;
+}
+
+a.comagic-personal-form__bottom-bar__link {
+    opacity: .5;
+    font-size: 12px;
+    text-decoration: underline;
+    font-family: Arial, Helvetica, sans-serif;
+    white-space: nowrap;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    color: black;
+}

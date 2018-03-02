@@ -1,0 +1,12 @@
+<div class='comagic-c-invite-bubble comagic-h-consultant-tools-owner'>
+    <div class='comagic-c-invite-bubble__triangle comagic-c-invite-bubble__triangle--<%=h_position%> comagic-c-invite-bubble__triangle--<%=v_position%>'></div>
+    <div class='comagic-c-tools comagic-c-tools--anchor-left' c-ref='closeBtn'>
+        <i class='comagic-c-tools__btn comagic-c-tools__btn--close'></i>
+    </div>
+    <div class='comagic-c-invite-bubble__content' c-ref='acceptBtn'>
+        <div class='comagic-c-invite-bubble__avatar'>
+            <img src='<%=operator_info.avatar || Comagic.UI.C.IMAGES.OPERATOR%>'>
+        </div>
+        <div class='comagic-c-invite-bubble__text'><%=text%></div>
+    </div>
+</div>
